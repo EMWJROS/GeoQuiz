@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends Activity {
@@ -30,7 +31,7 @@ public class QuizActivity extends Activity {
 	}
 	
 	private void checkAnswer(boolean userPressedTrue) {
-		boolean answerIsTrue = mQuestion[mCurrentIndex].isTrueQuestion();
+		boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
 		
 		int messageResId = 0;
 		
@@ -62,7 +63,7 @@ public class QuizActivity extends Activity {
 		mFalseButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				checkAnswer(true);
+				checkAnswer(false);
 			
 			}
 		});
